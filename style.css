@@ -336,32 +336,13 @@ header a:before {
 
 /* 가수 상세 페이지 */
 .song-list {
-    padding: 1rem 2rem 4rem 2rem;
+    padding: 0 2rem 4rem 2rem; /* 상단 패딩 제거, 광고 마진으로 간격 조절 */
     background-color: #f8f9fa;
-}
-
-.song-list h2 {
-    text-align: center;
-    font-size: 1.8rem; /* 크기 조정 */
-    font-weight: 600; /* SemiBold */
-    color: #1B263B; /* 네이비 */
-    margin-top: 2.5rem; /* 간격 조정 */
-    margin-bottom: 2.5rem; /* 간격 조정 */
-    position: relative;
-}
-
-.song-list h2:after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 2px;
-    background-color: #BFA181; /* 골드/브론즈 액센트 */
-    margin: 0.8rem auto 0;
 }
 
 .song-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto; /* 상단 마진 제거 (광고 마진으로 처리) */
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
