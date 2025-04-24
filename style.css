@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* Paperlogy Font */
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-Thin.woff2') format('woff2'),
+         url('fonts/Paperlogy-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-ExtraLight.woff2') format('woff2'),
+         url('fonts/Paperlogy-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-Light.woff2') format('woff2'),
+         url('fonts/Paperlogy-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-Regular.woff2') format('woff2'),
+         url('fonts/Paperlogy-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-Medium.woff2') format('woff2'),
+         url('fonts/Paperlogy-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-SemiBold.woff2') format('woff2'),
+         url('fonts/Paperlogy-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-Bold.woff2') format('woff2'),
+         url('fonts/Paperlogy-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-ExtraBold.woff2') format('woff2'),
+         url('fonts/Paperlogy-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('fonts/Paperlogy-Black.woff2') format('woff2'),
+         url('fonts/Paperlogy-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* 기본 리셋 및 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Paperlogy', sans-serif; /* Paperlogy 폰트 적용 */
+    color: #2c3e50; /* 기본 텍스트 색상 (짙은 회청색) */
+    background-color: #f8f9fa; /* 밝은 회색 배경 */
+    line-height: 1.6;
+    font-weight: 400; /* 기본 폰트 두께 설정 */
+}
+
+/* 헤더 스타일 - 네이비 블루 배경 */
+header {
+    background: #1B263B; /* 네이비 블루 */
+    color: white;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 1rem auto;
+    border-radius: 8px; /* 약간 각진 모서리 */
+}
+
+/* 가수 상세 페이지 헤더 너비 조정 */
+.singer-page-body header {
+    max-width: 800px;
+}
+
+.header-logo {
+    height: 32px; /* 로고 크기 약간 조정 */
+    margin-right: 12px;
+    filter: brightness(0) invert(1); /* 로고 흰색 유지 */
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-weight: 600; /* SemiBold */
+    font-size: 1.6rem; /* 크기 약간 조정 */
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: white; /* 기본 색상 (혹시 span 적용 안될 경우 대비) */
+}
+
+/* 헤더 제목 글자별 색상 */
+header h1 span {
+    display: inline-block; /* 개별 스타일 적용 및 효과 위해 */
+    transition: transform 0.2s ease; /* 호버 효과 추가 */
+}
+header h1 span:hover {
+    transform: scale(1.1) translateY(-2px); /* 호버 시 약간 커지고 위로 */
+}
+
+header h1 .char-1 { color: #ffffff; } /* 흰색 */
+header h1 .char-2 { color: #FF69B4; } /* 핫핑크 */
+header h1 .char-3 { color: #00FFFF; } /* 청록 (Cyan) */
+header h1 .char-4 { color: #FFD700; } /* 밝은 노랑 (Gold) */
+header h1 .char-5 { color: #ADFF2F; } /* 연두 (GreenYellow) */
+header h1 .char-6 { color: #EE82EE; } /* 보라 (Violet) */
+header h1 .char-7 { color: #ffffff; } /* 흰색 */
+
+/* 상세 페이지 뒤로가기 버튼 */
+header a {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #E0E1DD; /* 밝은 회색 텍스트 */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 400; /* Regular */
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* 약간 투명한 배경 */
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+header a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateY(-50%) scale(1.05);
+}
+
+header a:before {
+    content: "←";
+    margin-right: 5px;
+    font-size: 1rem;
+}
+
+/* 히어로 섹션 - 밝은 회색 배경 */
+.hero {
+    background: #E0E1DD; /* 밝은 회색 */
+    color: #1B263B; /* 네이비 텍스트 */
+    padding: 4rem 1.5rem; /* 패딩 조정 */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0.5rem auto 2rem auto;
+    border-radius: 8px;
+}
+
+.hero:before {
+    display: none;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 2rem; /* 크기 조정 */
+    font-weight: 600; /* SemiBold */
+    margin-bottom: 2.5rem; /* 간격 조정 */
+    text-shadow: none;
+}
+
+.search-container {
+    max-width: 550px; /* 너비 조정 */
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero input[type="text"] {
+    width: 100%;
+    padding: 0.9rem 4rem 0.9rem 1.5rem; /* 패딩 조정 */
+    border: 1px solid #ced4da; /* 연한 테두리 */
+    border-radius: 50px;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: 'Paperlogy', sans-serif;
+    background-color: #f8f9fa; /* 약간 다른 배경색 */
+    color: #495057;
+}
+
+.hero input[type="text"]:focus {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    border-color: #8a9aaa;
+    background-color: white;
+}
+
+/* 버튼 디자인 - 스틸 블루 */
+.hero button {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    background: #415A77; /* 스틸 블루 */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0.5rem 1rem; /* 패딩 조정 */
+    font-size: 0.85rem;
+    font-weight: 500; /* Medium */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(65, 90, 119, 0.2);
+    letter-spacing: 0;
+    font-family: 'Paperlogy', sans-serif;
+}
+
+.hero button:hover {
+    background: #1B263B; /* 호버 시 네이비 */
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 12px rgba(27, 38, 59, 0.3);
+}
+
+.hero button:active {
+    transform: translateY(-50%) scale(1);
+    box-shadow: 0 2px 5px rgba(27, 38, 59, 0.2);
+}
+
+.hero button::before {
+   display: none;
+}
+
+/* 카드 섹션 */
+.card-section {
+    padding: 2rem 2rem 4rem 2rem; /* 상단 패딩 조정, 하단 유지 */
+    background-color: #f8f9fa;
+}
+
+.card-section h2 {
+    text-align: center;
+    font-size: 1.8rem; /* 크기 조정 */
+    font-weight: 600; /* SemiBold */
+    color: #1B263B; /* 네이비 */
+    margin-bottom: 2.5rem; /* 간격 조정 */
+    position: relative;
+}
+
+.card-section h2:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #BFA181; /* 골드/브론즈 액센트 */
+    margin: 0.8rem auto 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; /* 간격 조정 */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #ffffff; /* 흰색 카드 배경 */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem; /* 패딩 조정 */
+    border: 2px solid #ced4da; /* 테두리 두께 및 색상 조정 */
+    border-bottom: 3px solid transparent; /* 하단 보더는 호버 효과 위해 유지 */
+}
+
+.card:before {
+    display: none; /* 기존 그라데이션 라인 제거 */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(65, 90, 119, 0.1); /* 스틸 블루 그림자 */
+    border-bottom-color: #415A77; /* 스틸 블루 하단 보더 */
+    background: #ffffff;
+}
+
+.card-title {
+    font-size: 1.3rem; /* 크기 조정 */
+    font-weight: 700; /* Bold */
+    color: #1B263B; /* 네이비 */
+    text-align: center;
+    transition: color 0.3s ease;
+    text-shadow: none;
+}
+
+.card:hover .card-title {
+    color: #415A77; /* 호버 시 스틸 블루 */
+}
+
+/* 가수 상세 페이지 */
+.song-list {
+    padding: 1rem 2rem 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.song-list h2 {
+    text-align: center;
+    font-size: 1.8rem; /* 크기 조정 */
+    font-weight: 600; /* SemiBold */
+    color: #1B263B; /* 네이비 */
+    margin-top: 2.5rem; /* 간격 조정 */
+    margin-bottom: 2.5rem; /* 간격 조정 */
+    position: relative;
+}
+
+.song-list h2:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #BFA181; /* 골드/브론즈 액센트 */
+    margin: 0.8rem auto 0;
+}
+
+.song-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #E0E1DD;
+}
+
+.song-list ul {
+    list-style-type: none;
+    counter-reset: song-counter;
+}
+
+.song-list li {
+    border-bottom: 1px solid #f1f1f1;
+    position: relative;
+}
+
+.song-list li:last-child {
+    border-bottom: none;
+}
+
+.song-list li a {
+    display: block;
+    padding: 1rem 1.5rem 1rem 3.5rem; /* 패딩 조정 */
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 1.2rem; /* 크기 조정 */
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 700; /* Bold */
+}
+
+.song-list li a:before {
+    counter-increment: song-counter;
+    content: counter(song-counter);
+    position: absolute;
+    left: 1.2rem;
+    width: 24px;
+    height: 24px;
+    background-color: #e0e1dd;
+    color: #415A77;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600; /* SemiBold */
+    transition: all 0.3s ease;
+}
+
+.song-list li a:hover {
+    background-color: #e0e1dd;
+    padding-left: 4rem;
+    color: #1B263B;
+    font-weight: 700; /* Hover: Bold 유지 */
+}
+
+.song-list li a:hover:before {
+    background-color: #415A77;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* 반응형 레이아웃 */
+/* (기존 반응형 규칙들은 유지하면서, 필요 시 내부 값들 조정) */
+
+@media (max-width: 1250px) {
+    header a {
+        /* 스타일 유지 */
+    }
+}
+
+@media (max-width: 1200px) {
+    header, .hero {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    .card {
+        padding: 1.2rem 0.8rem;
+    }
+    .card-title {
+        font-size: 1.2rem; /* 모바일 크기 조정 */
+    }
+}
+
+@media (max-width: 700px) {
+    .search-container {
+        /* 스타일 유지 */
+    }
+    .hero input[type="text"] {
+        padding: 0.8rem 3.5rem 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .hero button {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
+        right: 5px;
+    }
+    .song-list {
+        padding: 1rem 1.5rem 3rem 1.5rem;
+    }
+    .song-list li a {
+        font-size: 1.1rem; /* 모바일 크기 조정 */
+        padding: 0.9rem 1rem 0.9rem 3rem;
+    }
+    .song-list li a:before {
+        left: 1rem;
+        width: 22px;
+        height: 22px;
+        font-size: 0.75rem;
+    }
+    .song-list li a:hover {
+        padding-left: 3.5rem;
+    }
+    .header-logo {
+        height: 28px;
+        margin-right: 10px;
+    }
+    header a {
+        left: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    header h1 {
+        font-size: 1.3rem;
+    }
+    .header-logo {
+        height: 24px;
+        margin-right: 8px;
+    }
+    header a {
+        left: 0.6rem;
+        padding: 0.3rem 0.7rem;
+        font-size: 0.8rem;
+    }
+    .hero {
+        padding: 2.5rem 1rem;
+    }
+    .hero h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    .hero input[type="text"] {
+         padding: 0.7rem 3.2rem 0.7rem 1rem;
+         font-size: 0.85rem;
+    }
+    .hero button {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
+        right: 4px;
+    }
+    .card-section, .song-list {
+        padding: 1.5rem 1rem 3rem 1rem;
+    }
+    .card-section h2, .song-list h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    .card {
+        padding: 1rem 0.5rem;
+    }
+    .card-title {
+        font-size: 1.1rem; /* 작은 모바일 크기 조정 */
+    }
+    .song-list li a {
+        font-size: 1.0rem; /* 작은 모바일 크기 조정 */
+        padding: 0.8rem 0.8rem 0.8rem 2.8rem;
+    }
+    .song-list li a:before {
+        left: 0.8rem;
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+    .song-list li a:hover {
+        padding-left: 3.2rem;
+    }
+} 
