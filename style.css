@@ -110,15 +110,15 @@ header {
 }
 
 .header-logo {
-    height: 32px; /* 로고 크기 약간 조정 */
-    margin-right: 12px;
+    height: 40px; /* 로고 크기 증가 */
+    margin-right: 15px; /* 간격 증가 */
     /* filter: brightness(0) invert(1); 로고 필터 제거 */
     flex-shrink: 0;
 }
 
 header h1 {
     font-weight: 700; /* Bold로 변경 */
-    font-size: 2.0rem; /* 크기 키움 */
+    font-size: 2.4rem; /* 크기 증가 */
     letter-spacing: 1px; /* 간격 약간 넓힘 */
     margin: 0;
     color: #330706; /* 제목 글자색 유지 */
@@ -613,8 +613,11 @@ header a.back-button:before { /* 클래스 추가 가정 */
         left: 1rem; /* 호버 시 위치 고정 */
     }
     .header-logo {
-        height: 28px;
-        margin-right: 10px;
+        height: 32px; /* 모바일 로고 크기 증가 */
+        margin-right: 12px; /* 모바일 간격 증가 */
+    }
+    header h1 {
+        font-size: 1.8rem; /* 모바일 제목 크기 증가 */
     }
     header a {
         left: 0.8rem;
@@ -635,11 +638,11 @@ header a.back-button:before { /* 클래스 추가 가정 */
         gap: 0.8rem;
     }
     header h1 {
-        font-size: 1.3rem;
+        font-size: 1.5rem; /* 작은 모바일 제목 크기 증가 */
     }
     .header-logo {
-        height: 24px;
-        margin-right: 8px;
+        height: 28px; /* 작은 모바일 로고 크기 증가 */
+        margin-right: 10px; /* 작은 모바일 간격 증가 */
     }
     header a {
         left: 0.6rem;
