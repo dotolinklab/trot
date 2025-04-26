@@ -144,8 +144,23 @@ header h1 .char-5 { color: #9B59B6; } /* 보라 계열 */
 header h1 .char-6 { color: #E67E22; } /* 주황 계열 */
 header h1 .char-7 { color: #1ABC9C; } /* 청록 계열 */
 
-/* 상세 페이지 뒤로가기 버튼 */
-header a {
+/* 헤더 링크 기본 스타일 제거 */
+.header-link {
+    text-decoration: none;
+    display: flex; /* 로고/제목 정렬 위해 */
+    align-items: center;
+}
+
+.header-logo-link {
+    /* 기존 로고 위치 유지를 위해 추가 스타일 불필요 */
+}
+
+.header-title-link {
+    /* 기존 제목 스타일 유지를 위해 추가 스타일 불필요 */
+}
+
+/* 상세 페이지 뒤로가기 버튼 (a 태그 선택자 구체화) */
+header a.back-button { /* 클래스 추가 가정 또는 더 구체적인 선택자 필요 */
     position: absolute;
     left: 1rem;
     top: 50%;
@@ -165,7 +180,7 @@ header a {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header a:hover {
+header a.back-button:hover { /* 클래스 추가 가정 */
     background-color: #F0C808; /* 호버 시 약간 더 진한 노란색 */
     border-color: #B8860B;
     color: #000; /* 호버 시 검은색 글자 */
@@ -173,7 +188,7 @@ header a:hover {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-header a:before {
+header a.back-button:before { /* 클래스 추가 가정 */
     content: "←";
     margin-right: 6px; /* 아이콘 간격 약간 조정 */
     font-size: 1rem;
