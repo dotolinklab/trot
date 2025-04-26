@@ -207,7 +207,7 @@ header a.back-button:before { /* 클래스 추가 가정 */
     position: relative;
     overflow: hidden;
     max-width: 1200px;
-    margin: 0.5rem auto 2rem auto;
+    margin: 0.5rem auto 1rem auto; /* 하단 마진 줄임 */
     border-radius: 8px;
     z-index: 1; /* 내용을 오버레이 위로 올리기 위해 추가 */
 }
@@ -305,7 +305,7 @@ header a.back-button:before { /* 클래스 추가 가정 */
 
 /* 카드 섹션 */
 .card-section {
-    padding: 2rem 0 4rem 0; /* 좌우 패딩 제거, 상하 유지 */
+    padding: 1rem 0 4rem 0; /* 상단 패딩 줄임 */
     background-color: #f8f9fa;
     max-width: 1200px; /* 최대 너비 설정 */
     margin: 0 auto; /* 중앙 정렬 */
@@ -670,7 +670,7 @@ header a.back-button:before { /* 클래스 추가 가정 */
         right: 4px;
     }
     .card-section, .song-list {
-        padding: 1.5rem 1rem 3rem 1rem;
+        padding: 1rem 1rem 3rem 1rem; /* 상단 패딩 줄임 */
     }
     .card-section h2, .song-list h2 {
         font-size: 1.6rem;
