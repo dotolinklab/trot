@@ -207,7 +207,7 @@ header a.back-button:before { /* 클래스 추가 가정 */
     position: relative;
     overflow: hidden;
     max-width: 1200px;
-    margin: 0.5rem auto 1rem auto; /* 하단 마진 줄임 */
+    margin: 0.5rem auto 0.5rem auto; /* 하단 마진 더 줄임 */
     border-radius: 8px;
     z-index: 1; /* 내용을 오버레이 위로 올리기 위해 추가 */
 }
@@ -305,7 +305,7 @@ header a.back-button:before { /* 클래스 추가 가정 */
 
 /* 카드 섹션 */
 .card-section {
-    padding: 1rem 0 4rem 0; /* 상단 패딩 줄임 */
+    padding: 0.5rem 0 4rem 0; /* 상단 패딩 더 줄임 */
     background-color: #f8f9fa;
     max-width: 1200px; /* 최대 너비 설정 */
     margin: 0 auto; /* 중앙 정렬 */
@@ -583,13 +583,13 @@ header a.back-button:before { /* 클래스 추가 가정 */
         /* 스타일 유지 */
     }
     .hero input[type="text"] {
-        padding: 0.8rem 3.5rem 0.8rem 1.2rem;
-        font-size: 0.9rem;
+        padding: 0.8rem 3.5rem 0.8rem 1.2rem; /* 패딩은 유지하거나 약간 조정 */
+        font-size: 16px; /* 폰트 크기를 16px로 수정 */
     }
     .hero button {
-        padding: 0.45rem 0.9rem;
-        font-size: 0.8rem;
-        right: 5px;
+        padding: 0 1rem; /* 폰트 크기 변경에 따른 버튼 패딩 조정 */
+        font-size: 14px; /* 버튼 폰트 크기 조정 (16px 보다 작아도 됨) */
+        /* right: 5px; 버튼 위치 조정 제거 (flex 레이아웃으로 변경됨) */
     }
     .song-list {
         padding: 1rem 1.5rem 3rem 1.5rem;
@@ -661,16 +661,16 @@ header a.back-button:before { /* 클래스 추가 가정 */
         margin-top: 0.5rem; /* 줄바꿈 간격 추가 */
     }
     .hero input[type="text"] {
-         padding: 0.7rem 3.2rem 0.7rem 1rem;
-         font-size: 0.85rem;
+         padding: 0.8rem 1rem; /* 버튼 너비 고려하여 오른쪽 패딩 조정 */
+         font-size: 16px; /* 폰트 크기를 16px로 수정 */
     }
     .hero button {
-        padding: 0.35rem 0.7rem;
-        font-size: 0.75rem;
-        right: 4px;
+        padding: 0 0.8rem; /* 버튼 패딩 조정 */
+        font-size: 14px; /* 버튼 폰트 크기 조정 */
+        /* right: 4px; 제거 */
     }
     .card-section, .song-list {
-        padding: 1rem 1rem 3rem 1rem; /* 상단 패딩 줄임 */
+        padding: 0.5rem 1rem 3rem 1rem; /* 상단 패딩 더 줄임 */
     }
     .card-section h2, .song-list h2 {
         font-size: 1.6rem;
