@@ -50,7 +50,7 @@ const songsBySinger = {
     '홍진영': ['사랑의 배터리', '잘가라', '오늘 밤에', '엄지 척', '산다는 건', '사랑은 꽃잎처럼', '따르릉', '부기맨', '사랑이 좋아', '월량대표아적심', '눈물비', '비바 라 비다', '내가 왜 이럴까', '내 사랑', '사랑의 와이파이', '엄마', '술 한잔 해요', '사랑은 다 이러니', '스며드나봐', '봄'],
     '박현빈': ['샤방샤방', '곤드레 만드레', '오빠만 믿어', '대찬 인생', '앗! 뜨거', '빠라빠빠', '춘향아', '넌 너무 예뻐', '한판 붙자', '모래시계', '가족', '앗 뜨거 (Remix)', '남자답게', '쾌지나 칭칭', '나는 남자다', '그대에게', '수리수리 술술', '고백', '실컷 울어라', '내 사랑'],
     '김용임': ['부초같은 인생', '사랑의 밧줄', '내 사랑 그대여', '빙빙빙', '오늘이 젊은 날', '열두 줄', '훨훨훨', '사랑님', '내장산', '고향 가는 길', '의사 선생님', '나이야 가라', '비익조', '울지마라 세월아', '부초', '사랑 여행', '인생 시계', '고장난 벽시계', '사랑은 나비인가봐', '꽃바람'],
-    '신유': ['시계바늘', '꽃물', '잠자는 공주', '일소일소 일노일노', '반', '나쁜 남자', '토닥토닥', '사치기 사치기', '오르락 내리락', '애가', '광안리 수첩', '세월은 가도', '사랑해', '미안해서 미안해서', '사랑의 강도', '나 좀 봐', '가슴 아프게', '남자의 자리', '세월강', '이별의 약속'],
+    '신유': ['시계바늘', '꽃물', '잠자는 공주', '일소일소 일노일노', '반', '나쁜 남자', '토닥토닥', '사치기 사치기', '오르락 내리락', '애가', '광안리 수첩', '세월은 가도', '사랑해', '미안해서 미안해서', '사랑의 강도', '나 좀 봐', '가슴 아프게', '세월강', '이별의 약속'],
     '김수희': ['남행열차', '애모', '멍에', '잃어버린 정', '너무합니다', '화등', '정거장', '광야', '서울여자', '다시 한번 생각해줘요', '지금은 가지 마세요', '못 잊어', '꼬마 인형', '내 곁에 있어줘', '서울의 밤', '고독한 연인', '남포동 부르스', '자존심은 두고 떠나라', '우리는 타인', '잊어야 할 사람'],
     '현철': ['봉선화 연정', '사랑은 나비인가봐', '앉으나 서나 당신 생각', '내 마음 별과 같이', '싫다 싫어', '청춘을 돌려다오', '사랑의 이름표', '항구의 마지막 밤', '고장난 벽시계', '아미새', '못난 내 청춘', '추억의 테헤란로', '인생은 드라마야', '사랑은 눈물인가봐', '들국화 여인', '기억', '사랑은 무죄', '바보같은 사나이', '사랑에 푹 빠졌나봐', '나쁜 사람이야'],
     '조항조': ['남자라는 이유로', '만약에', '거짓말', '사랑찾아 인생찾아', '고맙소', '사나이 눈물', '가지마', '때', '빈손', '천상화', '기다림', '백년지기', '사랑꽃', '걱정마라 지나간다', '사랑은 아무나 하는게 아니야', '옹이', '이별의 마지막 밤', '당신 때문에', '사랑이 길을 잃어서', '인생아 고맙다'],
@@ -77,19 +77,44 @@ function koreanSort(a, b) {
     return a.localeCompare(b, 'ko');
 }
 
+// 버튼 색상 클래스 배열
+const colorClasses = ['color-blue', 'color-purple', 'color-teal', 'color-pink', 'color-orange'];
+
 // 가수 카드를 생성하고 그리드에 추가하는 함수
 function displaySingers(singerList) {
     cardGrid.innerHTML = ''; // 기존 카드 제거
-    singerList.forEach(singer => {
+    singerList.forEach((singer, index) => {
         const card = document.createElement('div');
         card.classList.add('card');
         
-        // 가수 이름만 추가
+        // 색상 클래스 순환해서 적용
+        const colorClass = colorClasses[index % colorClasses.length];
+        
+        // 이미지 요소 추가 (가수 사진)
+        const imageElement = document.createElement('div');
+        imageElement.classList.add('card-image');
+        imageElement.classList.add(colorClass); // 색상 클래스 추가
+        
+        // 가수 사진 추가 (이미지 파일이 images/singers/[가수이름].jpg 형식으로 저장되어 있다고 가정)
+        const imgElement = document.createElement('img');
+        imgElement.src = `images/singers/${singer.name}.jpg`;
+        // 이미지 로드 실패 시 이니셜로 대체
+        imgElement.onerror = function() {
+            // 이미지 로드 실패 시 이니셜 표시
+            const initial = singer.name.charAt(0);
+            imageElement.innerHTML = `<span>${initial}</span>`;
+            // 이미지 요소 제거
+            this.remove();
+        };
+        imageElement.appendChild(imgElement);
+        
+        // 가수 이름 추가
         const titleDiv = document.createElement('div');
         titleDiv.classList.add('card-title');
         titleDiv.textContent = singer.name;
         
-        // 카드에 이름만 추가
+        // 카드에 이미지와 이름 추가 (버튼 제거)
+        card.appendChild(imageElement);
         card.appendChild(titleDiv);
         
         card.dataset.singerId = singer.id; // 데이터 속성으로 ID 저장
@@ -97,7 +122,6 @@ function displaySingers(singerList) {
 
         // 카드 클릭 시 상세 페이지로 이동
         card.addEventListener('click', () => {
-            // 이름을 URL 파라미터로 전달
             window.location.href = `singer.html?name=${encodeURIComponent(singer.name)}`;
         });
 
@@ -135,12 +159,8 @@ function filterSingers() {
 // 검색 버튼 클릭 이벤트
 searchButton.addEventListener('click', filterSingers);
 
-// Enter 키 입력 시 검색 실행
-searchInput.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        filterSingers();
-    }
-});
+// 검색창 입력 시 실시간 검색 실행
+searchInput.addEventListener('input', filterSingers);
 
 // 페이지 로드 시 정렬된 전체 가수 표시
 const initialSortedSingers = [...singers].sort((a, b) => koreanSort(a.name, b.name));
