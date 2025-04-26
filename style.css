@@ -737,4 +737,11 @@ header a.back-button:before { /* 클래스 추가 가정 */
 .color-orange .card-image,
 .color-orange.card-image {
     background: linear-gradient(135deg, #E67E22, #BA4A00);
+}
+
+/* 애드센스 광고 컨테이너 스타일 */
+.ad-container-top {
+    margin: 1.5rem auto; /* 상하 마진 추가 및 좌우 자동 마진으로 중앙 정렬 */
+    max-width: 800px; /* 헤더와 유사한 최대 너비 (선택 사항) */
+    text-align: center; /* 내부 요소 가운데 정렬 (필요 시) */
 } 
