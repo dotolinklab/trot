@@ -126,6 +126,25 @@ function displaySingers(singerList) {
         });
 
         cardGrid.appendChild(card);
+
+        // 4번째 카드마다 광고 삽입 (인덱스가 3, 7, 11, ...)
+        if ((index + 1) % 4 === 0) {
+            const adContainer = document.createElement('div');
+            adContainer.classList.add('ad-container-infeed'); // 광고 컨테이너 클래스 추가
+            adContainer.innerHTML = `
+                <!-- Adsense In-feed Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-f7+5u+4t-da+6l"
+                     data-ad-client="ca-pub-3297361889610977"
+                     data-ad-slot="8092251585"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            `; // 제공된 광고 코드를 여기에 붙여넣습니다. <script> 태그는 이스케이프 처리합니다.
+            cardGrid.appendChild(adContainer);
+        }
     });
 }
 

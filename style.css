@@ -88,21 +88,30 @@ body {
     font-weight: 400;
 }
 
-/* 헤더 스타일 - 연한 회색 배경 */
+/* 헤더 스타일 - 어두운 배경 */
 header {
-    background: #f8f9fa; /* 연한 회색 배경 */
-    color: #330706; /* 기본 글자색 유지 */
-    padding: 1rem;
-    position: relative;
-    box-shadow: none; /* 그림자 제거 */
+    background: #2d0505; /* 요청하신 어두운 배경색 */
+    color: white; /* 기본 글자색 흰색 */
+    padding: 0.5rem 1rem; /* 위아래 패딩 줄임 */
+    position: sticky; /* 스크롤 시 고정 */
+    top: 0; /* 상단에 고정 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 그림자 약간 조정 */
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 1200px;
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto; /* 상단 마진만 유지하고 sticky와 겹치지 않게 변경 */
     border-radius: 8px; /* 약간 각진 모서리 */
     border: none; /* 테두리 제거 */
 }
+
+/* Sticky 헤더로 인한 body 상단 패딩 (선택 사항) */
+/*
+body {
+    padding-top: 50px; /* 줄어든 헤더 높이에 맞춰 조정 필요 (예시 값) */
+/*}
+*/
 
 /* 가수 상세 페이지 헤더 너비 조정 */
 .singer-page-body header {
@@ -112,7 +121,7 @@ header {
 .header-logo {
     height: 40px; /* 로고 크기 증가 */
     margin-right: 15px; /* 간격 증가 */
-    /* filter: brightness(0) invert(1); 로고 필터 제거 */
+    filter: brightness(0) invert(1); /* 로고 흰색으로 필터 적용 */
     flex-shrink: 0;
 }
 
@@ -121,7 +130,7 @@ header h1 {
     font-size: 2.4rem; /* 크기 증가 */
     letter-spacing: 1px; /* 간격 약간 넓힘 */
     margin: 0;
-    color: #330706; /* 제목 글자색 유지 */
+    color: white; /* 제목 글자색 흰색 */
 }
 
 /* 헤더 제목 글자별 색상 활성화 및 변경 */
@@ -159,13 +168,13 @@ header h1 .char-7 { color: #1ABC9C; } /* 청록 계열 */
     /* 기존 제목 스타일 유지를 위해 추가 스타일 불필요 */
 }
 
-/* 상세 페이지 뒤로가기 버튼 (a 태그 선택자 구체화) */
+/* 상세 페이지 뒤로가기 버튼 (어두운 배경에 맞게 수정) */
 header a.back-button { /* 클래스 추가 가정 또는 더 구체적인 선택자 필요 */
     position: absolute;
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #333; /* 어두운 글자색 */
+    color: white; /* 흰색 글자 */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -173,19 +182,19 @@ header a.back-button { /* 클래스 추가 가정 또는 더 구체적인 선택
     font-weight: 500; /* 약간 굵게 */
     padding: 0.4rem 0.9rem;
     border-radius: 20px;
-    background-color: #FFD700; /* 노란색 배경 */
-    border: 1px solid #DAA520; /* 진한 노란색 테두리 */
+    background-color: rgba(255, 255, 255, 0.15); /* 약간 투명한 흰색 배경 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 약간 밝은 테두리 */
     transition: all 0.3s ease;
     z-index: 10;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* 그림자 제거 */
 }
 
 header a.back-button:hover { /* 클래스 추가 가정 */
-    background-color: #F0C808; /* 호버 시 약간 더 진한 노란색 */
-    border-color: #B8860B;
-    color: #000; /* 호버 시 검은색 글자 */
+    background-color: rgba(255, 255, 255, 0.25); /* 호버 시 배경 약간 더 밝게 */
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white; /* 호버 시 글자색 유지 */
     transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: none;
 }
 
 header a.back-button:before { /* 클래스 추가 가정 */
@@ -248,7 +257,7 @@ header a.back-button:before { /* 클래스 추가 가정 */
     padding: 0.9rem 1.5rem;
     border: 1px solid #ced4da;
     border-right: none; /* 오른쪽 테두리 제거 */
-    border-radius: 50px 0 0 50px; /* 왼쪽만 둥글게 */
+    border-radius: 0; /* 각지게 */
     font-size: 0.95rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
@@ -271,11 +280,11 @@ header a.back-button:before { /* 클래스 추가 가정 */
     /* top: 50%; 제거 */
     /* right: 6px; 제거 */
     /* transform: translateY(-50%); 제거 */
-    background: #FFD700; /* 골드 색상 */
-    color: #1b263b; /* 네이비 글자색 */
+    background: #410908; /* 요청된 배경색 */
+    color: white; /* 흰색 글자색 */
     border: 1px solid white; /* 흰색 테두리 */
     border-left: none; /* 왼쪽 테두리 제거 유지 */
-    border-radius: 0 50px 50px 0; /* 오른쪽만 둥글게 */
+    border-radius: 0; /* 각지게 */
     padding: 0.5rem 1.2rem;
     font-size: 0.9rem;
     font-weight: 900; /* Black (더 두껍게) */
@@ -288,8 +297,8 @@ header a.back-button:before { /* 클래스 추가 가정 */
 }
 
 .hero button:hover {
-    background: #F0C808; /* 호버 시 약간 진한 골드 */
-    color: #1b263b; /* 호버 시 네이비 글자색 유지 */
+    background: #5a2928; /* 호버 시 약간 밝은 색 */
+    color: white; /* 호버 시 흰색 글자색 유지 */
     border-color: white; /* 호버 시 흰색 테두리 유지 */
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     z-index: 1;
@@ -297,7 +306,8 @@ header a.back-button:before { /* 클래스 추가 가정 */
 }
 
 .hero button:active {
-    background: #DAA520; /* 클릭 시 더 진한 골드 */
+    background: #734948; /* 클릭 시 더 밝은 색 */
+    color: white; /* 클릭 시 흰색 글자색 유지 */
     border-color: white; /* 클릭 시 흰색 테두리 유지 */
     transform: scale(0.98); /* 클릭 효과 */
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -353,7 +363,7 @@ header a.back-button:before { /* 클래스 추가 가정 */
     align-items: center; /* 수직 중앙 정렬 */
     justify-content: flex-start; /* 왼쪽 정렬 */
     height: auto; /* 높이 자동 조정 */
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    border: 1px solid #5a2928; /* 요청된 테두리 색상 */
 }
 
 .card:before {
@@ -371,7 +381,7 @@ header a.back-button:before { /* 클래스 추가 가정 */
 .card:hover {
     transform: translateY(-5px) scale(1.02); /* 스케일 약간 줄임 */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0); /* 호버 시 테두리 투명 유지 */
     z-index: 5; /* 호버 시 다른 카드 위로 올라오도록 */
 }
 
@@ -682,13 +692,16 @@ header a.back-button:before { /* 클래스 추가 가정 */
     .card-image {
         width: 40px;
         height: 40px;
+        margin-right: 0.8rem; /* 이미지와 제목 사이 간격 추가 */
     }
     .card-image span {
         font-size: 1.2rem;
     }
     .card-title {
         font-size: 1rem;
-        margin-left: 0.8rem;
+        margin-left: 0; /* 기존 마진 제거 */
+        flex-grow: 1; /* 남은 공간 차지 */
+        text-align: center; /* 텍스트 가운데 정렬 */
     }
     .song-list li a {
         font-size: 1.0rem; /* 작은 모바일 크기 조정 */
@@ -747,4 +760,23 @@ header a.back-button:before { /* 클래스 추가 가정 */
     margin: 1.5rem auto; /* 상하 마진 추가 및 좌우 자동 마진으로 중앙 정렬 */
     max-width: 800px; /* 헤더와 유사한 최대 너비 (선택 사항) */
     text-align: center; /* 내부 요소 가운데 정렬 (필요 시) */
+}
+
+/* 인피드 광고 컨테이너 기본 스타일 (모바일) */
+.ad-container-infeed {
+    width: 100%; /* 그리드 너비에 맞춤 */
+    margin: 1rem 0; /* 위아래 여백 */
+    /* 필요한 경우 추가 스타일 */
+}
+
+/* 데스크탑 화면 (예: 701px 이상)에서는 광고 숨김 */
+@media (min-width: 701px) {
+    .ad-container-infeed {
+        display: none;
+    }
+}
+
+/* 인피드 광고 스크립트 태그 자체를 숨기지는 않음 */
+.ad-container-infeed ins.adsbygoogle {
+    display: block; /* 인피드 광고는 block 요소여야 함 */
 } 
