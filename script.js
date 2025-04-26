@@ -131,18 +131,19 @@ function displaySingers(singerList) {
         if ((index + 1) % 4 === 0) {
             const adContainer = document.createElement('div');
             adContainer.classList.add('ad-container-infeed'); // 광고 컨테이너 클래스 추가
+            // 새로운 광고 코드로 교체
             adContainer.innerHTML = `
-                <!-- Adsense In-feed Ad -->
+                <!-- 트로트 중간광고 -->
                 <ins class="adsbygoogle"
                      style="display:block"
-                     data-ad-format="fluid"
-                     data-ad-layout-key="-f7+5u+4t-da+6l"
                      data-ad-client="ca-pub-3297361889610977"
-                     data-ad-slot="8092251585"></ins>
+                     data-ad-slot="6720903121"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
                 <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            `; // 제공된 광고 코드를 여기에 붙여넣습니다. <script> 태그는 이스케이프 처리합니다.
+                <\/script>
+            `; 
             cardGrid.appendChild(adContainer);
         }
     });
