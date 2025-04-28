@@ -95,9 +95,12 @@ function displaySingers(singerList) {
         imageElement.classList.add('card-image');
         imageElement.classList.add(colorClass); // 색상 클래스 추가
         
-        // 가수 사진 추가 (이미지 파일이 images/singers/[가수이름].jpg 형식으로 저장되어 있다고 가정)
+        // 가수 사진 추가 (이미지 파일이 images/singers/[가수이름].webp 형식으로 저장되어 있다고 가정)
         const imgElement = document.createElement('img');
-        imgElement.src = `images/singers/${singer.name}.jpg`;
+        imgElement.src = `images/singers/${singer.name}.webp`;
+        imgElement.alt = singer.name; // alt 속성 추가 (가수 이름)
+        imgElement.width = 50; // width 속성 추가
+        imgElement.height = 50; // height 속성 추가
         // 이미지 로드 실패 시 이니셜로 대체
         imgElement.onerror = function() {
             // 이미지 로드 실패 시 이니셜 표시
@@ -126,26 +129,6 @@ function displaySingers(singerList) {
         });
 
         cardGrid.appendChild(card);
-
-        // 4번째 카드마다 광고 삽입 (인덱스가 3, 7, 11, ...)
-        if ((index + 1) % 4 === 0) {
-            const adContainer = document.createElement('div');
-            adContainer.classList.add('ad-container-infeed'); // 광고 컨테이너 클래스 추가
-            // 새로운 광고 코드로 교체
-            adContainer.innerHTML = `
-                <!-- 트로트 중간광고 -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-3297361889610977"
-                     data-ad-slot="6720903121"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                <\/script>
-            `; 
-            cardGrid.appendChild(adContainer);
-        }
     });
 }
 
