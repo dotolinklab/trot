@@ -659,11 +659,11 @@ header a.back-button:before { /* 클래스 추가 가정 */
         margin: 0 auto; /* 중앙 정렬 */
     }
     .hero input[type="text"] {
-         padding: 0.8rem 0 0.8rem 1rem; /* 오른쪽 패딩 명시적 제거 */
+         padding: 1rem 0 1rem 1rem; /* 상하 패딩 늘리고 오른쪽 패딩 제거 */
          font-size: 16px; /* 폰트 크기를 16px로 수정 */
     }
     .hero button {
-        padding: 0 0.8rem; /* 버튼 패딩 조정 */
+        padding: 1rem 0.6rem; /* 상하 패딩 늘리고 좌우 패딩 약간 줄임 */
         font-size: 14px; /* 버튼 폰트 크기 조정 */
         /* right: 4px; 제거 */
     }
